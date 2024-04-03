@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h3>Sign In</h3>
+<hr>
+{% from "Includes/formhelpers.html" import render_field %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form method = "post">
+                {{ render_field(form.username, class="form-control", placeholder="Username") }}
+                {{ render_field(form.password, class="form-control", placeholder="Password") }}
+                <button type="submit" class="btn btn-primary mt-3">Sign In</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
