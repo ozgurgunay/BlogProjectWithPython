@@ -2,7 +2,7 @@ from flask import Flask, render_template, flash, redirect, url_for, session, log
 from flask_mysqldb import MySQL
 from wtforms import Form, StringField, TextAreaField, PasswordField, validators
 from passlib.hash import sha256_crypt
-
+#new
 # user register form fields and validations:
 class RegisterForm(Form):
     name = StringField("Name Surname", validators=[validators.Length(min = 4, max = 25)])
