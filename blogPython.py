@@ -26,7 +26,7 @@ app.config["MYSQL_HOST"] = "localhost"
 app.config["MYSQL_USER"] = "root"
 app.config["MYSQL_PASSWORD"] = ""
 app.config["MYSQL_DB"] = "blogprojectpython"
-app.config["MYSQL_CURSORCLASS"] = "DictCursor"  #bunun amacı sql den verileri alırken dictionary yapısınd alacağın anlamına geliyor.
+app.config["MYSQL_CURSORCLASS"] = "DictCursor"  #bunun amacı sql den verileri alırken dictionary yapısınd alacağın anlamına geliyor.!
 
 mysql = MySQL(app)
 
