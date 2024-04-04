@@ -6,8 +6,40 @@
 <small>Welcome to Hotel California, {{session["username"]}}</small>
 <hr>
 
-<a href="/addarticle" class = "btn btn-danger">Write something new!</a>
+<a href="/addArticle" class = "btn btn-danger" style = "margin-bottom: 20px;">Write something new!</a>
 
-
+{% if articles %}
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Title</th>
+        <th scope="col">Author</th>
+        <th scope="col">Date</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for article in articles %}
+      <tr>
+        <th scope="row">{{article.Id}}</th>
+        <td><a href="/article/{{article.Id}}">{{article.Title}}</a></td>
+        <td>{{article.Author}}</td>
+        <td>{{article.Created_Date}}</td>
+        <td><a href="/edit/{{article.Id}}" class = "btn btn-danger">Update</a></td>
+        <td><a href="/delete/{{article.Id}}" class = "btn btn-danger">Delete</a></td>
+      </tr>
+      {% endfor %}
+      <!-- <tr>
+        <th scope="row">3</th>
+        <td colspan="2">Larry the Bird</td>
+        <td>@twitter</td>
+      </tr> -->
+    </tbody>
+</table>  
+{% else %}
+<div class = "alert alert-danger">We couldn't find your article yet.</div>
+{% endif %}
 
 {% endblock body %}
